@@ -7,7 +7,7 @@ export async function connectToDatabase() {
     return mongoose.connection;
   }
 
-  await mongoose.connect(connectionString);
+  await mongoose.connect(connectionString, { dbName: 'octofit_db' });
   console.log('Connected to octofit_db');
   return mongoose.connection;
 }
