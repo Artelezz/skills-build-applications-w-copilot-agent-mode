@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Launch Django Backend",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/octofit-tracker/backend/manage.py",
       "args": ["runserver", "0.0.0.0:8000"],
@@ -33,6 +33,15 @@
       "env": {
         "VITE_CODESPACE_NAME": "${env:CODESPACE_NAME}"
       }
+    },
+    {
+      "name": "Seed OctoFit Database (npm run seed)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/octofit-tracker/backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "seed"],
+      "console": "integratedTerminal"
     }
   ]
 }
